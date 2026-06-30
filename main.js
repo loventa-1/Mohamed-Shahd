@@ -3,7 +3,7 @@
 const CONFIG = {
   groomName: "Mohamed",
   brideName: "Shahd",
-  weddingDate: "Monday, September 12, 2026",
+  weddingDate: "Saturday, September 12, 2026",
   weddingTime: "7:00 PM",
   venueName: "See Nile",
   venueMapLink:
