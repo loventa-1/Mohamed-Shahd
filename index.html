@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="ar" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no"
+    />
+    <title>دعوة زفاف</title>
+    <link rel="stylesheet" href="main.css" />
+    <!-- Google Fonts: Romantic + Elegant -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome 6 (free icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="invitation-wrapper">
+      <!-- HOOK SCREEN (first screen) -->
+      <div id="hookScreen" class="hook-screen">
+        <div class="hook-content">
+          <h1>You’re Invited</h1>
+          <div class="tap-btn" id="tapToOpenBtn">
+            <i class="fas fa-envelope-open-text"></i> Tap to Open
+          </div>
+        </div>
+      </div>
+
+      <!-- MAIN INVITATION CARD (hidden initially) -->
+      <div id="mainCard" class="main-card">
+        <!-- 💍 الأسماء كبير وواضح -->
+        <div class="names-section">
+          <div class="big-names">
+            Ameer <span class="heart-icon">🤍</span> Talya
+          </div>
+          <div class="title-message">💍 THE WEDDING 💍</div>
+        </div>
+
+        <!-- 📅 التاريخ بشكل شيك -->
+        <div class="date-block">
+          <div class="date-label">
+            <i class="fas fa-calendar-alt"></i> SAVE THE DATE
+          </div>
+          <div class="date-value">
+            <i class="fas fa-star-of-life"></i> Saturday, October 25th, 2028
+            <i class="fas fa-star-of-life"></i>
+          </div>
+          <div
+            class="wedding-time-text"
+            style="font-size: 0.85rem; color: #c9b37c"
+          >
+            at 7:00 PM · sunset ceremony
+          </div>
+        </div>
+        <!-- ⏳ COUNTDOWN TIMER SECTION -->
+        <div class="countdown-section">
+          <div class="countdown-label">
+            <i class="fas fa-hourglass-half"></i> COUNTDOWN TO OUR BIG DAY
+          </div>
+          <div class="countdown-timer" id="countdownTimer">
+            <div class="time-unit">
+              <span id="days">00</span><span class="unit-label">Days</span>
+            </div>
+            <div class="time-unit">
+              <span id="hours">00</span><span class="unit-label">Hours</span>
+            </div>
+            <div class="time-unit">
+              <span id="minutes">00</span
+              ><span class="unit-label">Minutes</span>
+            </div>
+            <div class="time-unit">
+              <span id="seconds">00</span
+              ><span class="unit-label">Seconds</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 🖼️ صورة مع scale animation -->
+        <div class="image-frame">
+          <img
+            class="wedding-img"
+            src="assets/images/couple.webp"
+            alt="Couple portrait"
+            id="weddingImage"
+          />
+        </div>
+
+        <!-- 📍 المكان + زرار view location -->
+        <div class="location-section">
+          <div id="locationBtn" class="location-btn">
+            <i class="fas fa-map-marker-alt"></i> View Location
+          </div>
+          <div class="hall-place">🌹 Grand Heritage Hall · Cairo, Egypt 🌹</div>
+        </div>
+
+        <!-- 💕 ROMANTIC VOWS MESSAGE (above the waiting message) -->
+        <div class="vows-message-card">
+          <p class="vows-opening">
+            ✨ On this day our journey together began. ✨
+          </p>
+          <p class="vows-line">
+            I accepted You as a pillar of support and a shoulder to lean on.
+          </p>
+          <p class="vows-line">I accepted You as a help and a companion.</p>
+          <p class="vows-line">
+            I accepted You to be my wife, my lover, my friend, my life partner,
+            and my soulmate.
+          </p>
+        </div>
+
+        <!-- ❤️ رسالة قصيرة (original waiting message) -->
+        <div class="message-card">
+          <p>✨ “We are waiting for you to celebrate with us” ✨</p>
+        </div>
+
+        <!-- ========== NEW FOOTER: SOCIAL + PHONE ========== -->
+        <footer class="invitation-footer">
+          <div class="footer-text">
+            <span class="footer-heart">🤍</span> Designed With love by  
+            <strong class="brand-loventa">Loventa</strong>
+            <span class="footer-heart">🤍</span>
+          </div>
+
+          <!-- phone row -->
+          <div class="footer-phone">
+            <i class="fas fa-phone-alt"></i>
+            <span id="phoneNumberDisplay">+20 100 123 4567</span>
+          </div>
+
+          <!-- social icons -->
+          <div class="footer-socials" id="socialLinksContainer">
+            <!-- ستتم تعبئتها من الجافاسكربت حسب الكونفيج -->
+          </div>
+        </footer>
+        <!-- ========== END FOOTER ========== -->
+
+        <!-- Ending: Save the Date + See you there -->
+        <div class="ending-section">
+          <div class="save-date">💫 Save the Date 💫</div>
+          <div class="see-you">
+            <i class="fas fa-champagne-glasses"></i> See you there 🎉
+            <i class="fas fa-heart" style="color: var(--gold)"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- subtle music button + audio element (هادية) -->
+      <div id="musicToggle" class="music-control">
+        <i id="musicIcon" class="fas fa-music"></i>
+        <span id="musicStatus">♫ Melody</span>
+      </div>
+      <audio id="bgMusic" loop preload="auto">
+        <source
+          src="assets/music/SpotiDown.App - Fall in love - Cloudrift.mp3"
+          type="audio/mpeg"
+        />
+        <!-- fallback: romantic instrumental (safe public domain style track) -->
+      </audio>
+    </div>
+  </body>
+  <script src="main.js"></script>
+</html>
